@@ -1,0 +1,1 @@
+The minimal UE4 version for this project is 4.19

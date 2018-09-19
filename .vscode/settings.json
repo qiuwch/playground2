@@ -2,5 +2,7 @@
     "files.exclude": {
         "Intermediate/": true,
         "Saved/": true,
+        "Binaries/": true,
+        ".vs": true,
     }
 }
