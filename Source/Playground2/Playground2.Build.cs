@@ -5,6 +5,7 @@ public class Playground2 : ModuleRules
 {
 	public Playground2(ReadOnlyTargetRules Target) : base(Target)
 	{
+		bFasterWithoutUnity = true; // Disable UnityBuild
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
