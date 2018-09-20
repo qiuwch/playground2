@@ -3,3 +3,6 @@ Binaries/
 Saved/
 .vs/
 *.sln
+*.zip
+
+*_BuiltData.uasset

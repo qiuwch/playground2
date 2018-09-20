@@ -40,13 +40,17 @@ void APlaygroundDebugActor::CaptureFrame()
 		"vget /camera/1/lit playground_cam1_lit.png",
 		"vget /camera/1/object_mask playground_cam1_seg.png",
 		"vget /camera/1/depth playground_cam1_depth.npy",
+		"vget /camera/2/lit playground_cam2_lit.png",
+		"vget /camera/2/object_mask playground_cam2_seg.png",
+		"vget /camera/2/depth playground_cam2_depth.npy",
 	};
 	APlayerController* PController= UGameplayStatics::GetPlayerController(GetWorld(), 0);
 	if( PController )
 	{
 		for (FString Cmd : TestCommands)
 		{
-			PController->ConsoleCommand(*Cmd, true);
+			FString Result = PController->ConsoleCommand(*Cmd, true);
+			UE_LOG(LogTemp, Display, TEXT("Cmd: %s, Output: %s"), *Cmd, *Result);
 		}
 	}
 	// FConsoleOutputDevice OutputDevice(GetWorld()->GetGameViewport()->ViewportConsole);
@@ -59,6 +63,5 @@ void APlaygroundDebugActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	CaptureFrame();
 }
 
